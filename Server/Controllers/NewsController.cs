@@ -26,24 +26,7 @@ namespace Server.Controllers
         {
 
                 
-          //     var category = new Category
-          //     {
-          //       Name = "Some category 3"
-          //   };
-          //   db.Categorys.Add(category);
-          //  var author = new Author
-          //  {
-          //     FullName = "Калганов Терентий Изяславович",
-          //     Address = "ул. Куйбышева дом 1234 кв. 12345",
-          //     Phone = 5555555
-          //  };
-          //   db.Authors.Add(author);
-
-          //   db.Add(new News { Date = DateTimeOffset.Now.Date, Name = "Мирная Делегация", CategoryId = category.Id, AuthorId = author.Id });
-
-          //  db.SaveChanges();
-
-         
+        
 
             var news = db.News.Include(n => n.Author)
                 .Include(n => n.Category).Select(n => new { id = n.Id, Name = n.Name, Date = n.Date, Author = new { Name = n.Author.FullName, Phone = n.Author.Phone }, Category = n.Category.Name });
