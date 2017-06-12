@@ -17,7 +17,10 @@ namespace Server.Controllers
 
         NewsContext db;
 
-
+        /// <summary>
+        /// Конструктор.
+        /// </summary>
+        /// <param name="context">Контекст БД</param>
         public NewsController(NewsContext context)
         {
             db = context;
@@ -59,6 +62,11 @@ namespace Server.Controllers
             return new OkObjectResult(news);
         }
 
+        /// <summary>
+        /// Возвращает автора по его имени
+        /// </summary>
+        /// <param name="name">имя автора</param>
+        /// <returns>найденый автор или значение по умолчанию</returns>
         [Route("author/{name}")]
         [HttpGet]
         public IActionResult GetAuthorName(string name)
