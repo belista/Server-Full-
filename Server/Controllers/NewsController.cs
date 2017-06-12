@@ -171,6 +171,13 @@ namespace Server.Controllers
             db.SaveChanges();
             return Ok(db.Authors);
         }
+
+		/// <summary>
+		/// Нужно переделать метод count-offset.
+		/// </summary>
+		/// <param name="count">Количество.</param>
+		/// <param name="offset">Смещение.</param>
+		/// <returns>Список обьектов.</returns>
         [Route("get/count/{count}/offset/{offset}")]
         [HttpGet]
         public IActionResult GetNewsOffset(int count, int offset)
