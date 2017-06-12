@@ -17,7 +17,10 @@ namespace Server.Controllers
 
         NewsContext db;
 
-
+        /// <summary>
+        /// Конструктор.
+        /// </summary>
+        /// <param name="context">Контекст БД</param>
         public NewsController(NewsContext context)
         {
             db = context;
